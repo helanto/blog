@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="el">
 	<head>
 		<title>Koutsoukos Olive Oil | Award-Winning Greek Extra Virgin</title>
 		<meta charset="utf-8" />
@@ -13,23 +13,94 @@
 		<link rel="icon" type="image/png" href="images/logo.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			html[lang="el"] [data-lang="en"] { display: none !important; }
+			html[lang="en"] [data-lang="el"] { display: none !important; }
+
+			.lang-toggle {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				z-index: 10000;
+				display: inline-flex;
+				gap: 8px;
+			}
+			.lang-toggle button {
+				appearance: none;
+				background: transparent;
+				border: 0;
+				padding: 0;
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				cursor: pointer;
+				overflow: hidden;
+				position: relative;
+				opacity: 0.55;
+				box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.35);
+				transition: opacity 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+			}
+			.lang-toggle button:hover {
+				opacity: 0.9;
+				transform: scale(1.05);
+			}
+			.lang-toggle button.is-active {
+				opacity: 1;
+				box-shadow: 0 0 0 2px #ffffff, 0 1px 4px rgba(0, 0, 0, 0.4);
+			}
+			.lang-toggle button svg {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+			@media screen and (max-width: 480px) {
+				.lang-toggle { top: 12px; right: 12px; gap: 6px; }
+				.lang-toggle button { width: 22px; height: 22px; }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
+				<!-- Language toggle -->
+					<div class="lang-toggle" role="group" aria-label="Language selector">
+						<button type="button" data-set-lang="el" class="is-active" aria-pressed="true" aria-label="Ελληνικά" title="Ελληνικά">
+							<svg viewBox="0 0 27 18" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<rect width="27" height="18" fill="#0d5eaf"/>
+								<rect y="2" width="27" height="2" fill="#fff"/>
+								<rect y="6" width="27" height="2" fill="#fff"/>
+								<rect y="10" width="27" height="2" fill="#fff"/>
+								<rect y="14" width="27" height="2" fill="#fff"/>
+								<rect width="10" height="10" fill="#0d5eaf"/>
+								<rect x="4" width="2" height="10" fill="#fff"/>
+								<rect y="4" width="10" height="2" fill="#fff"/>
+							</svg>
+						</button>
+						<button type="button" data-set-lang="en" aria-pressed="false" aria-label="English" title="English">
+							<svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<clipPath id="uk-t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+								<rect width="60" height="30" fill="#012169"/>
+								<path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+								<path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/>
+								<path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+								<path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+							</svg>
+						</button>
+					</div>
+
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
 							<!-- <span class="icon brands fa-pagelines"></span>m -->
-							<img src="images/logo.png" alt="Ελαιολάδο Κουτσούκος Logo" style="width: 100%; max-width: 150px; display: block; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);">
+							<img src="images/logo.png" alt="Koutsoukos Olive Oil Logo" style="width: 100%; max-width: 150px; display: block; margin: 0 auto; position: relative; top: 50%; transform: translateY(-50%);">
 						</div>
 						<div class="content">
 							<div class="inner">
-								<p>Εξαιρετικο παρθενο</p>
-								<h2>ΕΛΑΙΟΛΑΔΟ ΚΟΥΤΣΟΥΚΟΣ</h2>
-								<p>απο την αργολικη γη</p>
+								<p><span data-lang="el">Εξαιρετικο παρθενο</span><span data-lang="en">Extra virgin</span></p>
+								<h2><span data-lang="el">ΕΛΑΙΟΛΑΔΟ ΚΟΥΤΣΟΥΚΟΣ</span><span data-lang="en">KOUTSOUKOS OLIVE OIL</span></h2>
+								<p><span data-lang="el">απο την αργολικη γη</span><span data-lang="en">from the land of Argolis</span></p>
 								<!-- <p>παρθενο ελαιολαδο απο την αργολική γη <a href="https://html5up.net">HTML5 UP</a> and released<br />
 									for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p> -->
 							</div>
@@ -53,7 +124,8 @@
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="images/koutsoukos2.jpg" alt="" /></span>
 								<!-- <h4>30 Χρονια Παραδοση στην Ποιοτητα του Ελαιολαδου</h4> -->
-								<p>Η οικογενειακή επιχείρηση Κουτσούκος, με έδρα τη γραφική Δήμαινα Αργολίδας, δραστηριοποιείται στην παραγωγή και πώληση εξαιρετικού παρθένου ελαιόλαδου για περισσότερα από 30 χρόνια. Με σεβασμό στην παράδοση και αγάπη για τον τόπο μας, εξελισσόμαστε συνεχώς, προχωρώντας και στην εμφιάλωση του ελαιολάδου μας. Το εμφιαλωμένο έξτρα παρθένο ελαιόλαδο που παράγουμε ξεχωρίζει διεθνώς για τη γεύση και την ποιότητά του. Το 2023 απέσπασε το Χρυσό Βραβείο Ποιότητας και το 2025 το Ασημένιο Βραβείο, στον Διεθνή Διαγωνισμό Ελαιολάδου του Βερολίνου, επιβεβαιώνοντας τη δέσμευσή μας στην αριστεία. Ελάτε να γνωρίσετε το ελαιόλαδο Κουτσούκος, μια γεύση που κρατάει ζωντανή την παράδοση του τόπου μας.</p>
+								<p data-lang="el">Η οικογενειακή επιχείρηση Κουτσούκος, με έδρα τη γραφική Δήμαινα Αργολίδας, δραστηριοποιείται στην παραγωγή και πώληση εξαιρετικού παρθένου ελαιόλαδου για περισσότερα από 30 χρόνια. Με σεβασμό στην παράδοση και αγάπη για τον τόπο μας, εξελισσόμαστε συνεχώς, προχωρώντας και στην εμφιάλωση του ελαιολάδου μας. Το εμφιαλωμένο έξτρα παρθένο ελαιόλαδο που παράγουμε ξεχωρίζει διεθνώς για τη γεύση και την ποιότητά του. Το 2023 απέσπασε το χρυσό βραβείο ποιότητας και το 2025 το ασημένιο βραβείο, στον <a href="https://berlingooa.com/" target="_blank" rel="noopener noreferrer">διεθνή διαγωνισμό ελαιολάδου του Βερολίνου</a>, επιβεβαιώνοντας τη δέσμευσή μας στην αριστεία. Ελάτε να γνωρίσετε το ελαιόλαδο Κουτσούκος, μια γεύση που κρατάει ζωντανή την παράδοση του τόπου μας.</p>
+								<p data-lang="en">The Koutsoukos family business, based in the picturesque village of Dimaina in Argolis, has been producing and marketing extra virgin olive oil for more than 30 years. Rooted in tradition and driven by a deep love for our homeland, we continuously evolve. Today, we proudly bottle our own premium extra virgin olive oil, which has earned international recognition for its exceptional quality and distinctive taste. In 2023, it received the gold award at the <a href="https://berlingooa.com/" target="_blank" rel="noopener noreferrer">Berlin GOOA</a>, followed by the silver award in 2025, reaffirming our commitment to excellence. Discover Koutsoukos olive oil. It is a taste that keeps the tradition of our land alive.</p>
 							</article>
 
 						<!-- Work -->
@@ -68,8 +140,10 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/koutsoukos4.jpg" alt="" /></span>
-								<p>Ο Κωνσταντίνος Κουτσούκος είναι ο ιδρυτής της επιχείρησης «Κουτσούκος» , η οποία εδρεύει στην Δήμαινα Αργολίδας, ένα παραδοσιακό χωριό του Δήμου Επιδαύρου το οποίο αποτελείται από μεγάλης έκτασης ελαιώνες. Κίνητρο για τη δημιουργία της επιχείρησης αποτέλεσε η παραγωγή μεγάλων ποσοτήτων εξαιρετικού παρθένου ελαιολάδου στην περιοχή και η επιθυμία προώθησής τους από τον Κωνσταντίνο Κουτσούκο στην ελληνική αγορά, όπως επίσης και η σημαντική ιστορία των ελαιόδεντρων της περιοχής που αποτελούν την κληρονομιά των προγόνων μας.</p>
-								<p>Στο χωριό υπάρχουν «Οι 8 ελιές της Δήμαινας» που είναι ανάμεσα στα προστατευόμενα, από την περιβαλλοντική νομοθεσία, διατηρητέα μνημεία της φύσης και αποτελούν ιστορικά δέντρα που έχουν σωθεί στο Ελλαδικό χώρο. Πρόκειται για 8 υπεραιωνόβια δέντρα που κατάφεραν να αντέξουν όλες τις κακουχίες των προηγούμενων αιώνων και να μείνουν στην ιστορία ως το Ιερό Δάσος ή Βακούφι, σύμφωνα με τον Σουλτάνο. Στην ευρύτερη περιοχή συναντάμε και κάποια μεμονωμένα δέντρα που έχουν σωθεί από το ιερό δάσος.</p>
+								<p data-lang="el">Ο Κωνσταντίνος Κουτσούκος είναι ο ιδρυτής της επιχείρησης Κουτσούκος, η οποία εδρεύει στην Δήμαινα Αργολίδας, ένα παραδοσιακό χωριό του δήμου Επιδαύρου το οποίο αποτελείται από μεγάλης έκτασης ελαιώνες. Κίνητρο για τη δημιουργία της επιχείρησης αποτέλεσε η παραγωγή μεγάλων ποσοτήτων εξαιρετικού παρθένου ελαιολάδου στην περιοχή και η επιθυμία προώθησής τους από τον Κωνσταντίνο Κουτσούκο στην ελληνική αγορά, όπως επίσης και η σημαντική ιστορία των ελαιόδεντρων της περιοχής που αποτελούν την κληρονομιά των προγόνων μας.</p>
+								<p data-lang="en">Konstantinos Koutsoukos is the founder of the Koutsoukos business, based in Dimaina, a traditional village in the municipality of Epidaurus in Argolis that is surrounded by extensive olive groves. The business was established to showcase the region&rsquo;s abundant production of extra virgin olive oil to the Greek market, together with the rich history of the region&rsquo;s olive trees, which form part of our cultural heritage.</p>
+								<p data-lang="el">Στο χωριό υπάρχουν «οι 8 ελιές της Δήμαινας» που είναι ανάμεσα στα προστατευόμενα, από την περιβαλλοντική νομοθεσία, διατηρητέα μνημεία της φύσης και αποτελούν ιστορικά δέντρα που έχουν σωθεί στο ελλαδικό χώρο. Πρόκειται για 8 υπεραιωνόβια δέντρα που κατάφεραν να αντέξουν όλες τις κακουχίες των προηγούμενων αιώνων και να μείνουν στην ιστορία ως το ιερό δάσος ή Βακούφι, σύμφωνα με τον σουλτάνο. Στην ευρύτερη περιοχή συναντάμε και κάποια μεμονωμένα δέντρα που έχουν σωθεί από το ιερό δάσος.</p>
+								<p data-lang="en">The village is home to &laquo;the 8 olive trees of Dimaina&raquo;, which are among the natural monuments protected by environmental law. They are historic trees that have stood for centuries. These are 8 centuries-old trees that endured all the hardships of past centuries and became known as the sacred forest, or Vakoufi, during the Ottoman period, according to a decree of the sultan. In the wider area, several isolated trees that survived from the sacred forest can still be found.</p>
 								<span class="image main"><img src="images/koutsoukos3.jpg" alt="" /></span>
 								<!-- <p>Η επιχείρηση δραστηριοποιείται τα τελευταία 30 χρόνια στην Αργολίδα με την πώληση χύμα εξαιρετικού παρθένου ελαιολάδου και το 2023 εισήχθη σε αυτήν μία από τις τέσσερες κόρες του Κωνσταντίνου Κουτσούκου, η Ευγενία, η οποία μαζί με τον πατέρα της προχώρησαν στην πώληση και εμφιαλωμένου έξτρα παρθένου ελαιολάδου , το οποίο κατέκτησε χρυσό βραβείο στο Διεθνή διαγωνισμό του Βερολίνου το 2023.</p> -->
 							</article>
@@ -384,6 +458,45 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					var STORAGE_KEY = 'koutsoukos.lang';
+					var SUPPORTED = ['el', 'en'];
+					var TITLES = {
+						el: 'Ελαιόλαδο Κουτσούκος | Βραβευμένο Εξαιρετικό Παρθένο Ελαιόλαδο',
+						en: 'Koutsoukos Olive Oil | Award-Winning Greek Extra Virgin'
+					};
+
+					function pickInitial() {
+						var stored = null;
+						try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+						if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
+						var nav = (navigator.language || 'el').toLowerCase();
+						return nav.indexOf('el') === 0 ? 'el' : 'en';
+					}
+
+					function applyLang(lang) {
+						if (SUPPORTED.indexOf(lang) === -1) lang = 'el';
+						document.documentElement.setAttribute('lang', lang);
+						if (TITLES[lang]) document.title = TITLES[lang];
+						var buttons = document.querySelectorAll('.lang-toggle button[data-set-lang]');
+						for (var i = 0; i < buttons.length; i++) {
+							var isActive = buttons[i].getAttribute('data-set-lang') === lang;
+							buttons[i].classList.toggle('is-active', isActive);
+							buttons[i].setAttribute('aria-pressed', isActive ? 'true' : 'false');
+						}
+						try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+					}
+
+					applyLang(pickInitial());
+
+					document.addEventListener('click', function(e) {
+						var target = e.target.closest ? e.target.closest('[data-set-lang]') : null;
+						if (!target) return;
+						applyLang(target.getAttribute('data-set-lang'));
+					});
+				})();
+			</script>
 
 	</body>
 </html>
